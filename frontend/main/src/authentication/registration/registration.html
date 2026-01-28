@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Discord Registration</title>
+  <link rel="stylesheet" href="registration.css">
+</head>
+
+<body>
+  <canvas id="svgBlob"></canvas>
+
+  <div class="position">
+    <form class="container">
+      <div class="centering-wrapper">
+        <div class="section1 text-center">
+          <div class="primary-header">Create an accaunt</div>
+          <div class="secondary-header">We're so excited to see you again!</div>
+          <div class="input-position">
+
+
+            <div class="form-group">
+              <h5 class="input-placeholder" id="email-txt">Name<span class="error-message" id="email-error"></span>
+              </h5>
+              <input id="name" type="email" required="true" name="logemail" class="form-style" id="logemail" autocomplete="off"
+                style="margin-bottom: 20px;">
+              <i class="input-icon uil uil-at"></i>
+            </div>
+
+
+            <div class="form-group">
+              <h5 class="input-placeholder" id="email-txt">Surname<span class="error-message" id="email-error"></span>
+              </h5>
+              <input id = "surname" type="email" required="true" name="logemail" class="form-style" id="logemail" autocomplete="off"
+                style="margin-bottom: 20px;">
+              <i class="input-icon uil uil-at"></i>
+            </div>
+
+
+
+            <div class="form-group">
+              <h5 class="input-placeholder" id="email-txt">Email<span class="error-message" id="email-error"></span>
+              </h5>
+              <input id="email" type="email" required="true" name="logemail" class="form-style" id="logemail" autocomplete="off"
+                style="margin-bottom: 20px;">
+              <i class="input-icon uil uil-at"></i>
+            </div>
+
+
+
+            <div class="form-group">
+              <h5 class="input-placeholder" id="pword-txt">Password<span class="error-message"
+                  id="password-error"></span></h5>
+              <input id="password" type="password" required="true" name="logpass" class="form-style" id="logpass" autocomplete="on">
+              <i class="input-icon uil uil-lock-alt"></i>
+            </div>
+
+
+          </div>
+           <div class="password-container"><a href="#" class="link">Login</a></div>
+          <div class="btn-position">
+            <a href="#" class="btn">Next</a>
+          </div>
+        </div>
+        <div class="horizontalSeparator"></div>
+       
+      </div>
+    </form>
+  </div>
+  <script type="module" src="../../../../dist/main/src/authentication/registration/registration.js"></script>
+</body>
+
+</html>

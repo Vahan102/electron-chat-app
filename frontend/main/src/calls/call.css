@@ -1,0 +1,18 @@
+video{
+    width: 500px;
+    height: 400px;
+    margin-top: 10%;
+    border: 5px solid #23a559;;
+    border-radius: 15px;
+    background-color: white;
+}
+
+.video{
+    margin-left: 16%;
+    
+}
+
+.video div{
+    margin-top: 10%;
+    border: 1px solid blue;
+}

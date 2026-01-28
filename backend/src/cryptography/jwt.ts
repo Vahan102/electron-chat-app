@@ -8,9 +8,11 @@ export function generateToken(payload: object): string {
 
 export function verifyToken(token: string) {
   try {
+    // console.log(token)
     return jwt.verify(token, process.env.JWT_SECRET || "");
   } catch (error) {
     console.error('Invalid token:', error);
     return false;
   }
 }
+

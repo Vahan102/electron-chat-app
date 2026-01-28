@@ -16,19 +16,24 @@ const zodschema: Schema = {
     email: z.string().email(),
     password: z.string().min(8).max(100),
   }),
-  //add
-  createServer: z.object({
-    name: z.string()
+  //all
+  name: z.object({
+    name: z.string(),
   }),
-    createComment: z.object({
-    author: z.string(),
-    text: z.string(),
-    linl:z.string()
+  link: z.object({
+    link: z.string()
   }),
-  //delete
-   deleteServer: z.object({
-     link: z.string()
-   })
+  tagname: z.object({
+    name:z.string(),
+    tag:z.string()
+  }),
+  email: z.object({
+    email:z.string()
+  }),
+  emailandlink: z.object({
+    email:z.string(),
+    link:z.string()
+  }),
 };
 
 export function validation(
@@ -44,7 +49,7 @@ export function validation(
       const zodData = zodschema[schemaKey];
       const bodyData: any = req[name];
       zodData.parse(bodyData);
-
+      
       next();
       return;
     } catch (err) {
@@ -63,4 +68,4 @@ export function validation(
       }
     }
   };
-}
+};

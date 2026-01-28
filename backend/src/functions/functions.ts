@@ -44,6 +44,7 @@ export async function verificationToken(token: string) {
 export async function verificationOfUser(email: string, password: string) {
     try {
         const user = await getUser(email);
+        console.log(user)
         if (Array.isArray(user)) {
             if ("solt" in user[0]) {
                 const solt = user[0].solt;
@@ -62,3 +63,6 @@ export async function verificationOfUser(email: string, password: string) {
         throw err;
     }
 };
+
+
+

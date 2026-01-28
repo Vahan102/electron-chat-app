@@ -1,12 +1,14 @@
 import { Request, Response } from "express";
 import { createSalt, createToken } from "../functions/functions.js"
-import { sha256 } from "../cryptography/crypto.js"
+import { createTag, sha256 } from "../cryptography/crypto.js"
 import { getUser } from "../db/get.js";
 import { addUser } from "../db/add.js";
 
 export async function registrationController(req: Request, res: Response) {
   try {
+    console.log(1)
     const { name, surname, email, password, avatar } = req.body;
+    const tag:string = "#" + createTag();
     const user: any = await getUser(email);
     if (user == undefined) {
       res.status(409).send("Sorry,but this email is already taken.");
@@ -15,7 +17,7 @@ export async function registrationController(req: Request, res: Response) {
 
     const solt: string = createSalt();
     const hashPassword: string = sha256(password + solt);
-    await addUser([name, email, avatar, surname, solt, hashPassword]);
+    await addUser([name, email, avatar, surname, solt, hashPassword,tag]);
     res.send(JSON.stringify({ message: "User added." }));
 
   } catch (err) {

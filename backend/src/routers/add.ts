@@ -1,11 +1,19 @@
 import { Router } from "express";
-import { verifivationToken } from "../middleware/verification.js";
-import { createChannelController } from "../controllers/add.js";
+import { verificationToken } from "../middleware/verification.js";
+import { addChatController, addFriendController, addUserIngroupController, createServerController, joinGroupController } from "../controllers/add.js";
 import { validation } from "../middleware/validation.js";
+
 
 const add_router:Router = Router();
  
-add_router.post("/createserver",verifivationToken,validation("createServer","body"),createChannelController);
+add_router.post("/createserver",verificationToken,validation("name","body"),createServerController);
 
+add_router.post("/joingroup",verificationToken,validation("link","body"),joinGroupController);
+ 
+// add_router.post("/addfriend",verificationToken,validation("tagname","body"),addFriendController);
+
+add_router.post("/addchat",verificationToken,validation("email","body"),addChatController);
+
+add_router.post("/adduseringroup",verificationToken,validation("emailandlink","body"),addUserIngroupController);
 
 export default add_router; 
