@@ -1,7 +1,5 @@
 # Discord (local project)
 
-# Discord (local project)
-
 This repository contains a backend (Node/TypeScript) and an Electron frontend. The instructions below show how to run the backend and database with Docker and how to run the Electron frontend locally.
 
 ## Prerequisites
