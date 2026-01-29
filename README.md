@@ -72,5 +72,3 @@ npm start
 
 ---
 
-README created/updated automatically.
-
